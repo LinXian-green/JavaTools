@@ -1,3 +1,4 @@
+/*
 package DataSourceConnectionPool;
 
 import java.sql.*;
@@ -92,11 +93,13 @@ public class MyConnectionUtil {
         }
     }
 
-    /**
+    */
+/**
      * 创建一个新的数据库连接并返回它
      *
      * @return 返回一个新创建的数据库连接
-     */
+     *//*
+
     private Connection newConnection() throws SQLException {
         // 创建一个数据库连接
         Connection conn = DriverManager.getConnection(dbUrl, dbUsername,
@@ -120,3 +123,4 @@ public class MyConnectionUtil {
         return conn; // 返回创建的新的数据库连接
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 import DataSourceConnectionPool.MyConnectionUtil;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -14,19 +15,23 @@ public class ConnectionPool {
     private Multimap<String,MyConnection> connectionPool = null;
     // 它中存放的对象为 PooledConnection 型
 
-    /**
+    */
+/**
      * 返回连接池的初始大小
      *
      * @return 初始连接池中可获得的连接数量
-     */
+     *//*
+
     public int getMinConnections() {
         return this.minConnections;
     }
 
-    /**
+    */
+/**
      *
      * 创建一个数据库连接池，连接池中的可用连接的数量采用类成员 initialConnections 中设置的值
-     */
+     *//*
+
 
     public synchronized void initPool() throws Exception {
 
@@ -65,12 +70,14 @@ public class ConnectionPool {
         }
     }
 
-    /**
+    */
+/**
      * 通过调用 getFreeConnection() 函数返回一个可用的数据库连接 , 如果当前没有可用的数据库连接，并且更多的数据库连接不能创
      * 建（如连接池大小的限制），此函数等待一会再尝试获取。
      *
      * @return 返回一个可用的数据库连接对象
-     */
+     *//*
+
 
     public synchronized Connection getConnection(String dbSourceName) throws SQLException {
         // 确保连接池己被创建
@@ -90,12 +97,14 @@ public class ConnectionPool {
         return conn;// 返回获得的可用的连接
     }
 
-    /**
+    */
+/**
      * 本函数从连接池向量 connections 中返回一个可用的的数据库连接，如果 当前没有可用的数据库连接，本函数则根据
      * incrementalConnections 设置 的值创建几个数据库连接，并放入连接池中。 如果创建后，所有的连接仍都在使用中，则返回 null
      *
      * @return 返回一个可用的数据库连接
-     */
+     *//*
+
     private Connection getFreeConnection(String dbSourceName) throws SQLException {
         // 从连接池中获得一个可用的数据库连接
         Connection conn = findFreeConnection();
@@ -113,11 +122,13 @@ public class ConnectionPool {
         return conn;
     }
 
-    /**
+    */
+/**
      * 查找连接池中所有的连接，查找一个可用的数据库连接， 如果没有可用的连接，返回 null
      *
      * @return 返回一个可用的数据库连接
-     */
+     *//*
+
 
     private Connection findFreeConnection(String dbSourceName) throws SQLException {
         Connection conn = null;
@@ -143,11 +154,13 @@ public class ConnectionPool {
         return conn;// 返回找到到的可用连接
     }
 
-    /**
+    */
+/**
      * 此函数返回一个数据库连接到连接池中，并把此连接置为空闲。 所有使用连接池获得的数据库连接均应在不使用此连接时返回它。
      *
      * @param 需返回到连接池中的连接对象
-     */
+     *//*
+
 
     public void returnConnection(Connection conn) {
         // 确保连接池存在，如果连接没有创建（不存在），直接返回
@@ -169,9 +182,11 @@ public class ConnectionPool {
         }
     }
 
-    /**
+    */
+/**
      * 关闭连接池中所有的连接，并清空连接池。
-     */
+     *//*
+
 
     public synchronized void closeConnectionPool() throws SQLException {
         // 确保连接池存在，如果不存在，返回
@@ -196,11 +211,13 @@ public class ConnectionPool {
         connections = null;
     }
 
-    /**
+    */
+/**
      * 关闭一个数据库连接
      *
      * @param 需要关闭的数据库连接
-     */
+     *//*
+
 
     private void closeConnection(Connection conn) {
         try {
@@ -209,11 +226,13 @@ public class ConnectionPool {
             System.out.println(" 关闭数据库连接出错： " + e.getMessage());
         }
     }
-    /**
+    */
+/**
      * 使程序等待给定的毫秒数
      *
      * @param 给定的毫秒数
-     */
+     *//*
+
 
     private void wait(int mSeconds) {
         try {
@@ -221,10 +240,12 @@ public class ConnectionPool {
         } catch (InterruptedException e) {
         }
     }
-    /**
+    */
+/**
      *
      * 内部使用的用于保存连接池中连接对象的类 此类中有两个成员，一个是数据库的连接，另一个是指示此连接是否 正在使用的标志。
-     */
+     *//*
+
 
     class MyConnection implements Cloneable{
         Connection connection = null;// 数据库连接
@@ -266,3 +287,4 @@ public class ConnectionPool {
         }
     }
 }
+*/
